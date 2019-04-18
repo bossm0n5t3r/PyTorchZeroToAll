@@ -49,6 +49,6 @@ for epoch in range(1000):
 
 # After training
 hour_var = Variable(torch.Tensor([[1.0]]))
-print("predict 1 hour ", 1.0, model(hour_var).data[0][0] > 0.5)
+print("predict 1 hour ", 1.0, model(hour_var).data.item() > 0.5)
 hour_var = Variable(torch.Tensor([[7.0]]))
-print("predict 7 hours", 7.0, model(hour_var).data[0][0] > 0.5)
+print("predict 7 hours", 7.0, model(hour_var).data.item() > 0.5)
